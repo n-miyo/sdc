@@ -1,0 +1,14 @@
+{
+  "name": "Search with date",
+  "version": "0.1",
+  "background_page": "background.html",
+  "description": "This extension enable to search with specified date.",
+  "page_action":
+  {
+      "default_icon": "icon.png",
+      "default_title": "Any time"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}

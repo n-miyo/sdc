@@ -1,0 +1,92 @@
+<!--
+  Copyright (c) 2010, MIYOKAWA, Nobuyoshi <n-miyo@tempus.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHORS ''AS IS'' AND ANY EXPRESS
+  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<html>
+<head>
+<script type="text/javascript">
+var time_range = [
+  ['Any time',       ''],
+  ['Latest',         '&tbs=rltm:1'],
+  ['Past 24 hours',  '&tbs=qdr:d'],
+  ['Past week',      '&tbs=qdr:w'],
+  ['Past year',      '&tbs=qdr:y']
+];
+var current = 0;
+
+function changeSearchTime(url) {
+//  console.log("searchanytime:changeSearchTime.");
+  var tbs_rxp = /&tbs=[a-zA-Z:0-9]+/;
+  var m = url.match(tbs_rxp);
+  var new_url = url;
+  var new_range = time_range[current][1];
+
+  if (m == null) {
+    new_url += new_range;
+  } else {
+    new_url = new_url.replace(tbs_rxp, new_range);
+  }
+  return new_url;
+}
+
+function searchAnyTime(tab) {
+//  console.log("searchanytime:searchAnyTime.");
+  var new_url = changeSearchTime(tab.url);
+  if(new_url != tab.url) {
+    chrome.tabs.update(tab.id, {'url': new_url});
+  }
+  updateIcon(tab.id);
+  current += 1;
+  if (current > time_range.length-1) {
+    current = 0;
+  }
+}
+
+function updateIcon(tab_id) {
+//  console.log("searchanytime:updateIcon.");
+  chrome.pageAction.setTitle(
+    {'tabId': tab_id, 'title': 'search ' + time_range[current][0]});
+}
+
+chrome.tabs.onUpdated.addListener(function(tab_id, change_info, tab) {
+//  console.log("searchanytime:onUpdated.addListener.");
+//  tab.url="http://www.google.co.jp/search?sourceid=chrome&ie=UTF-8&q=foo&esrch=FT1";
+
+  if (tab.url.match(/http(s)?:\/\/.*\.google\..*\/search/) !== null) {
+    chrome.pageAction.show(tab_id);
+    updateIcon(tab.id);
+  } else {
+    chrome.pageAction.hide(tab_id);
+  }
+});
+
+chrome.pageAction.onClicked.addListener(function(tab) {
+  searchAnyTime(tab);
+});
+</script>
+</head>
+<body>
+</body>
+</html>
