@@ -68,6 +68,10 @@ function updateIcon(tab_id) {
 //  console.log("searchanytime:updateIcon.");
   chrome.pageAction.setTitle(
     {'tabId': tab_id, 'title': 'search ' + time_range[current][0]});
+/*
+  chrome.pageAction.setIcon(
+    {'tabId': tab_id, 'path': 'icon' + current + '.png'});
+*/
 }
 
 chrome.tabs.onUpdated.addListener(function(tab_id, change_info, tab) {

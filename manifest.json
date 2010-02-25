@@ -1,14 +1,18 @@
 {
   "name": "Search with date",
-  "version": "0.1",
+  "version": "0.1.0",
   "background_page": "background.html",
-  "description": "This extension enable to search with specified date.",
-  "page_action":
-  {
+  "description":
+    "This extension adds limited date range to search result URL.",
+  "page_action": {
       "default_icon": "icon.png",
       "default_title": "Any time"
   },
   "permissions": [
     "tabs"
-  ]
+  ],
+  "icons": {
+       "48": "icon0.png",
+      "128": "icon128.png"
+  }
 }
