@@ -1,6 +1,6 @@
 {
   "name": "Search with date",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "background_page": "background.html",
   "description":
     "This extension adds limited date range to search result URL.",
