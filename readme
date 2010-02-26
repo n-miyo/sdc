@@ -4,7 +4,7 @@
 contact: n-miyo@tempus.org
 ------------------------------------------------------------
 
-version 0.2:
+version 0.2(Feb 26, 2010):
 - Set up initial 'publish date' search option based on
   current URL, instead of starting from 'Recent results'.
 - Fix bug for occurring wrong modification if you click this
