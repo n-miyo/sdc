@@ -1,3 +1,28 @@
-With installing this extension, you can add date range to
-google search result url, just one click, without invoking
-search tool menu and/or search options.
+------------------------------------------------------------
+		 README for SearchWithDate
+
+contact: n-miyo@tempus.org
+------------------------------------------------------------
+
+version 0.2:
+- Set up initial 'publish date' search option based on
+  current URL, instead of starting from 'Recent results'.
+- Fix bug for occurring wrong modification if you click this
+  extension button when URL already has 'publish date' option.
+
+This extension adds 'Publish date' option to your Google
+search results and update them in new search setting.
+
+If you search some words by Google, you can see clock icon
+at omni-box with search results.  This icon enables you to
+add 'Publish date' option, which you can see in 'Show
+options' menu for search results.  You can click the icon,
+search results will be updated with the new 'Publish date'
+option.
+
+By clicking the icon, 'Publish date' option will be changed
+in the same order to Google's menu, such as, 'Any time',
+'Latest', 'Past 24 hours', 'Past week', 'Past year'.  If
+your mouse is on the icon, tool-tip shows next search option.
+
+; EOF
