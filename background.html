@@ -28,6 +28,12 @@
 <html>
 <head>
 <script type="text/javascript">
+null_console = {
+  "log": function(s) {},
+  "error": function(s) {}
+}
+console = null_console;
+
 var time_range = [
   ['Any time',       ''],
   ['Latest',         '&tbs=rltm:1'],
@@ -35,64 +41,106 @@ var time_range = [
   ['Past week',      '&tbs=qdr:w'],
   ['Past year',      '&tbs=qdr:y']
 ];
-var current = 0;
 
-function changeSearchTime(url) {
-//  console.log("searchanytime:changeSearchTime.");
-  url = url.replace(/%3A/g, ":"); // XXX
+var next = 0;
+var tbs_rxp = /&tbs=[a-zA-Z:0-9]+/;
 
-  var tbs_rxp = /&tbs=[a-zA-Z:0-9]+/;
+function getMatch(url) {
+  var url = url.replace(/%3A/g, ":"); // XXX
   var m = url.match(tbs_rxp);
-  var new_url = url;
-  var new_range = time_range[current][1];
-
-  if (m == null) {
-    new_url += new_range;
-  } else {
-    new_url = new_url.replace(tbs_rxp, new_range);
-  }
-
-  return new_url;
+  return m;
 }
 
-function searchAnyTime(tab) {
-//  console.log("searchanytime:searchAnyTime.");
+function changeSearchTime(url) {
+  console.log("searchanytime:changeSearchTime.");
+  url = url.replace(/%3A/g, ":"); // XXX
+  var new_range = time_range[next][1];
+
+  console.log("url: " + url);
+  var m = getMatch(url);
+  console.log("m: " + m);
+  if (m == null) {
+    url += new_range;
+  } else {
+    url = url.replace(tbs_rxp, new_range);
+  }
+  console.log("url: " + url);
+
+  return url;
+}
+
+function getCurrentState(url) {
+  console.log("searchanytime:getCurrentState.");
+
+  var state = 0;
+  var m = getMatch(url);
+  if (m === null) {
+    m = [''];
+  }
+  for (i = 0; i < time_range.length; i++) {
+    console.log("matched: " + m[0] + " / target: " + time_range[i][1]);
+    if (m[0] === time_range[i][1]) {
+      state = i;
+      break;
+    }
+  }
+  console.log("current state: " + state);
+
+  return state;
+}
+
+function searchWithTime(tab) {
+  console.log("searchanytime:searchWithTime.");
   var new_url = changeSearchTime(tab.url);
   if(new_url != tab.url) {
     chrome.tabs.update(tab.id, {'url': new_url});
   }
-  updateIcon(tab.id);
-  current += 1;
-  if (current > time_range.length-1) {
-    current = 0;
-  }
 }
 
-function updateIcon(tab_id) {
-//  console.log("searchanytime:updateIcon.");
+function setupNextState(url) {
+  console.log("searchanytime:setupNextState: " + url);
+  next = getCurrentState(url)+1
+  if (next > time_range.length-1) {
+    next = 0;
+  }
+
+  console.log("next state: " + next);
+}
+
+function updateToolTip(tab) {
+  console.log("searchanytime:updateToolTip: " + next);
   chrome.pageAction.setTitle(
-    {'tabId': tab_id, 'title': 'search ' + time_range[current][0]});
+    {'tabId': tab.id,
+     'title': "search within '" + time_range[next][0] + "'"});
 /*
   chrome.pageAction.setIcon(
-    {'tabId': tab_id, 'path': 'icon' + current + '.png'});
+    {'tabId': tab.id, 'path': 'icon' + next + '.png'});
 */
 }
 
 chrome.tabs.onUpdated.addListener(function(tab_id, change_info, tab) {
-//  console.log("searchanytime:onUpdated.addListener.");
+  console.log("searchanytime:onUpdated.addListener.");
 //  tab.url="http://www.google.co.jp/search?sourceid=chrome&ie=UTF-8&q=foo&esrch=FT1";
 
   if (tab.url.match(/http(s)?:\/\/.*\.google\..*\/search/) !== null) {
     chrome.pageAction.show(tab_id);
-    updateIcon(tab.id);
+    setupNextState(tab.url);
+    updateToolTip(tab);
   } else {
     chrome.pageAction.hide(tab_id);
   }
 });
 
 chrome.pageAction.onClicked.addListener(function(tab) {
-  searchAnyTime(tab);
+  console.log("searchanytime:chrome.pageAction.onClicked.addListener.");
+  searchWithTime(tab);
 });
+
+chrome.extension.onRequest.addListener(function(request, sender, sentResp) {
+  console.log("searchanytime:chrome.extension.onRequest.addListener.");
+  searchWithTime(tab);
+});
+
 </script>
 </head>
 <body>
