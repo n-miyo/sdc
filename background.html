@@ -1,3 +1,4 @@
+<!-- -*-mode: javascript -*- -->
 <!--
   Copyright (c) 2010, MIYOKAWA, Nobuyoshi <n-miyo@tempus.org>
   All rights reserved.
@@ -38,6 +39,8 @@ var current = 0;
 
 function changeSearchTime(url) {
 //  console.log("searchanytime:changeSearchTime.");
+  url = url.replace(/%3A/g, ":"); // XXX
+
   var tbs_rxp = /&tbs=[a-zA-Z:0-9]+/;
   var m = url.match(tbs_rxp);
   var new_url = url;
@@ -48,6 +51,7 @@ function changeSearchTime(url) {
   } else {
     new_url = new_url.replace(tbs_rxp, new_range);
   }
+
   return new_url;
 }
 
