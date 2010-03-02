@@ -1,9 +1,9 @@
 {
-  "name": "Search with date",
-  "version": "0.2",
+  "name": "Quick Date Rage Changer",
+  "version": "1.0",
   "background_page": "background.html",
   "description":
-    "This extension enables to update Google search results by adding 'Publish date option' and search again with just oneclick.",
+    "This extension enables to add 'Publish date option' to Google search results URL and re-search by just oneclick.",
   "page_action": {
       "default_icon": "icon0.png",
       "default_title": "Any time"
@@ -12,7 +12,7 @@
     "tabs"
   ],
   "icons": {
-       "48": "icon0.png",
+       "48": "icon48.png",
       "128": "icon128.png"
   }
 }
