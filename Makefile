@@ -2,7 +2,7 @@
 # Makefile
 #
 
-DIST_NAME = SearchDateChanger
+DIST_NAME = sdc
 DIST_TARGET = \
   background.html \
   icon0.png \
