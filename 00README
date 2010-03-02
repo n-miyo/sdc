@@ -1,0 +1,47 @@
+------------------------------------------------------------
+		 README for Quick Date Rage Changer
+
+------------------------------------------------------------
+
+[DESCRIPTION]
+
+This extension adds 'Publish date' option to your Google
+search results and update them in new search setting.
+
+If you search some words by Google, you can see the icon at
+omni-box with search results.  This icon enables you to add
+'Publish date' option, which you can see in 'Show options'
+menu for search results.  You can click the icon, search
+results will be updated with the new 'Publish date' option.
+
+By clicking the icon, 'Publish date' option will be changed
+in the same order to Google's menu, such as, 'Any time',
+'Latest', 'Past 24 hours', 'Past week', 'Past year'.  If
+your mouse is on the icon, tool-tip shows next search option.
+
+
+[HISTORY]
+
+version 1.0(Mar 2, 2010):
+- Enable to see next search mode in addition to tooltip.
+- Change package name.
+
+
+version 0.2(Feb 26, 2010):
+- Set up initial 'publish date' search option based on
+  current URL, instead of starting from 'Recent results'.
+- Fix bug for occurring wrong modification if you click this
+  extension button when URL already has 'publish date' option.
+
+
+version 0.1(Feb 25, 2010):
+- Initial release.
+
+
+
+[AUTHOR]
+E-Mail: n-miyo@tempus.org
+Twitter: nmiyo
+Blog: http://blogger.tempus.org/
+
+; EOF
