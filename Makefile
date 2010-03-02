@@ -2,7 +2,7 @@
 # Makefile
 #
 
-DIST_NAME = QuickDateRageChanger
+DIST_NAME = SearchDateChanger
 DIST_TARGET = \
   background.html \
   icon0.png \
