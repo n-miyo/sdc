@@ -10,6 +10,7 @@ DIST_TARGET = \
   icon2.png \
   icon3.png \
   icon4.png \
+  icon48.png \
   icon128.png \
   manifest.json
 VERSION=`cat manifest.json | \
