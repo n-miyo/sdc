@@ -112,10 +112,8 @@ function updateToolTip(tab) {
   chrome.pageAction.setTitle(
     {'tabId': tab.id,
      'title': "search within '" + time_range[next][0] + "'"});
-/*
   chrome.pageAction.setIcon(
     {'tabId': tab.id, 'path': 'icon' + next + '.png'});
-*/
 }
 
 chrome.tabs.onUpdated.addListener(function(tab_id, change_info, tab) {
