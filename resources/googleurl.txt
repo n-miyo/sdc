@@ -1,0 +1,51 @@
+#
+# Google Search result URL
+#
+#  - 2010/08/13
+
+Spec:
+- search word 'foo'
+- max result num: 100
+
+
+#####
+# Google in English
+
+# From Google Top Page
+http://www.google.com/webhp?hl=en#hl=en&source=hp&q=foo&aq=f&aqi=g10&aql=&oq=&gs_rfai=&fp=8631cdd35a4d476d
+
+# Web(and Everything)
+http://www.google.com/webhp?hl=en#q=foo&num=100&hl=en&tbo=1&output=search&source=lnt&tbs=qdr:d&sa=X&ei=oqBkTK3dDcOecd_IwJYF&ved=0CAUQpwU&fp=8631cdd35a4d476d
+http://www.google.com/search?q=foo&num=100&hl=en&tbo=1&output=search&source=lnt&tbs=qdr:d&sa=X&ei=0aBkTMK0KMfJcc-F_JYF&ved=0CAUQpwU
+
+# Google news
+http://www.google.com/webhp?hl=en#q=foo&num=100&hl=en&tbs=nws:1,qdr:d&prmd=nvifd&source=lnt&sa=X&ei=EaBkTOPWEZCjcZn71JYF&ved=0CAwQpwU&fp=e9086256e869e14f
+http://www.google.com/search?q=foo&num=100&hl=en&tbs=nws:1,qdr:d&prmd=nvifd&source=lnt&sa=X&ei=FZ5kTNHkIoqxcdyyqZEJ&ved=0CAwQpwU
+
+# Google video
+http://www.google.com/webhp?hl=en#q=foo&num=100&hl=en&tbs=vid:1,qdr:d&prmd=nvifd&source=lnt&sa=X&ei=AaFkTP2NOsyHcZnt4ZYF&ved=0CA0QpwU&fp=53f76573bd5b9a02
+http://www.google.com/search?q=foo&num=100&hl=en&tbs=vid:1,qdr:d&source=lnt&sa=X&ei=EqFkTKn-JcuPcP7v-JYF&ved=0CA0QpwU
+
+# Google books
+http://www.google.com/webhp?hl=en#q=foo&num=100&hl=en&tbs=bks:1,qdr:d&source=lnt&sa=X&ei=TqZkTLb0KtDzcdD88JsK&ved=0CBIQpwU&fp=839bd1d8badd01a0
+http://www.google.com/search?q=foo&num=100&hl=en&prmdo=1&biw=1157&bih=538&tbs=bks:1,qdr:d&source=lnt&sa=X&ei=paZkTJnAOYLfcZS1ndgJ&ved=0CBMQpwU
+
+#####
+# Google in Japanese
+
+# From Google Top Page
+http://www.google.com/search?hl=ja&source=hp&q=foo&aq=f&aqi=g8g-r2&aql=&oq=&gs_rfai=
+
+# Web(and Everything)
+http://www.google.com/search?q=foo&num=100&hl=ja&tbo=1&output=search&source=lnt&tbs=qdr:d&sa=X&ei=HaJkTIq0A8Opcb3WxNwJ&ved=0CAgQpwU
+
+# Google news
+http://www.google.com/search?q=foo&num=100&hl=ja&tbs=nws:1,qdr:d&source=lnt&sa=X&ei=DqJkTNxz0r1xi6nhlgU&ved=0CA8QpwU
+
+# Google video
+http://www.google.com/search?q=foo&num=100&hl=ja&um=1&ie=UTF-8&tbo=u&tbs=qdr:d,vid:1&source=og&sa=N&tab=wv
+
+# Google books
+http://www.google.com/search?q=foo&num=100&hl=ja&tbo=1&tbs=bks:1,qdr:d&source=lnt&sa=X&ei=C6ZkTLzkI4axcfa8wZYF&ved=0CBkQpwU
+
+# EOF

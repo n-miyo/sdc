@@ -1,0 +1,122 @@
+------------------------------------------------------------
+	    README for Search Date Changer
+
+------------------------------------------------------------
+
+[DESCRIPTION]
+
+この 'Search Date Changer' (または 'SDC') は、Google 検索結
+果の日時範囲を簡単に変更するための Chrome 拡張です。
+
+Google で検索を行うと、OmniBox(URLボックスとして知られていま
+す)上に、SDC のアイコンが表示されます。このアイコンをクリック
+することで、Google の検索結果の日時範囲を指定した値に変更出
+来ます。SDCアイコンが表示されるのは、Web検索、ニュース検索、
+動画検索、ならびに、書籍検索に限られます。
+
+アイコンをクリックするごとに、検索結果は「期間指定なし」「最
+新」「24時間以内」「1週間以内」「1か月以内」「1年以内」の順番
+で変化します。アイコンの示す意味を知りたい場合には、マウスカー
+ソルをアイコンの上に置くことで、現在のモードがToolTipとして表
+示されます。
+
+Chrome拡張オプションメニューを使うことで、SDCのモードを設定
+することが出来ます。SDCアイコンの上で右クリックを行うか、
+Google Chrome 拡張のメニューから、SDCのオプションを設定可能
+です。
+
+「有効」のチェックボックスを選択し、好みの動作を設定してくだ
+さい。「全ての検索でユーザ設定を強制使用する」チェックボック
+スを有効にしている場合、Google検索結果の日付範囲が「有効」で
+選択された範囲と合致しない際には、SDCは「有効」と指定された日
+付範囲を用いて、自動的に再検索を試みます。この自動選択機構で
+使われる検索日時範囲の指定には、「デフォルト」オプションを利
+用してください。
+
+
+[SOURCE CODE]
+
+全てのソースコードは以下から取得できます。
+- <URL:http://github.com/n-miyo/sdc/>
+
+
+[HISTORY]
+
+version 1.5.0(Aug 13, 2010):
+- オリジナルのWeb検索に加え、ニュース、動画、書籍サーチを検
+  索結果日時範囲の変更対象として追加しました。
+- 新しい英語版GoogleトップページのURLをサポートしました。
+- 「1か月以内」を検索結果日付範囲へ加えました。
+- オプションメニューを通じて、好みのSDCモードが選択できるよ
+  うになりました。
+- 検索日時範囲を強制できるようになりました。
+- アイコンの意味を変更しました。従来は「次の」検索モードを示
+  していましたが、この版から「現在の」検索モードを示します。
+- アイコンの図柄を変更しました。
+- 英語に加え日本語サポートを追加しました。
+
+
+version 1.0.1(Mar 2, 2010):
+- Just re-packages...
+
+
+version 1.0(Mar 2, 2010):
+- Enable to see next search mode in addition to tooltip.
+- Change package name.
+
+
+version 0.2(Feb 26, 2010):
+- Set up initial 'publish date' search option based on
+  current URL, instead of starting from 'Recent results'.
+- Fix bug for occurring wrong modification if you click this
+  extension button when URL already has 'publish date' option.
+
+
+version 0.1(Feb 25, 2010):
+- Initial release.
+
+
+[AUTHOR]
+
+E-Mail: n-miyo@tempus.org
+Twitter: nmiyo
+Blog: http://blogger.tempus.org/
+
+
+[LICENCE]
+
+This program uses jQuery library.  See jQuery source code
+header for jQuery License.
+
+This program uses JsUnitTest framework.  See JsUnitTest
+License at http://jsunittest.com/.
+
+License for other codes are below:
+
+  Copyright (c) 2010, MIYOKAWA, Nobuyoshi <n-miyo@tempus.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHORS ''AS IS'' AND ANY EXPRESS
+  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+; EOF

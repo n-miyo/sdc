@@ -5,24 +5,60 @@
 
 [DESCRIPTION]
 
-This extension adds 'Publish date' option to your Google
-search results and update them in new search setting.
+This 'Search Date Changer'(or 'SDC') chrome extension
+enables you to change Google search result date range
+easily.
 
-If you search some words by Google, you can see the icon at
-omni-box with search results.  This icon enables you to add
-'Publish date' option, which you can see in 'Show options'
-menu for search results.  You can click the icon, search
-results will be updated with the new 'Publish date' option.
+When you searched some words by Google, SDC icon is on the
+OmniBox(or as known as URL box).  By clicking the icon, you
+can change your Google search results with specified date
+range.  SDC icon will be just only for Google Web search,
+News search, Video search, and Books search.
 
-By clicking the icon, 'Publish date' option will be changed
-in the same order to Google's menu, such as, 'Any time',
-'Latest', 'Past 24 hours', 'Past week', 'Past year'.  If
-your mouse is on the icon, tool-tip shows next search option.
+Every icon clicking, search range changes in the order 'Any
+time', 'Latest', 'Past 24 hours', 'Past week', 'Past month',
+and 'Past year'.  If you'd like to know what the icon means,
+please put your mouse cursor on the icon and tool-tip shows
+current mode.
+
+You can select SDC mode from Chrome extensions option menu.
+With clicking right mouse button on SDC icon or from
+Google chrome extension menu, you can see SDC's option
+view.
+
+Please check 'Enable' check-box for your preferred behavior.
+If you check 'Force user setting for any search' check box
+and Google search result date range does not match the one
+you select as 'Enable', SDC tries to re-search again with
+search result date range which you check as 'Enabled'
+automatically.  To select search result date range for this
+automatic selection, 'Default' option will be used.
+
+
+[SOURCE CODE]
 
 All source code will be available from:
 - <URL:http://github.com/n-miyo/sdc/>
 
+
 [HISTORY]
+
+version 1.5.0(Aug 13, 2010):
+- Support News, Video, Books search in additon to original
+  Web search for changing search result date range target.
+- Support New English Google top page URL(webhp).
+- Support 'Past month' search result date range.
+- Enable to select favorite SDC mode with option menu.
+- Enable to enforce search date range.
+- Change icons meaning.  From this version, each icons
+  indicate 'current' mode, instead of 'next' search mode.
+- Change icon's design.
+- Support Japanese mode.
+
+
+version 1.0.1(Mar 2, 2010):
+- Just re-packages...
+
 
 version 1.0(Mar 2, 2010):
 - Enable to see next search mode in addition to tooltip.
@@ -40,10 +76,47 @@ version 0.1(Feb 25, 2010):
 - Initial release.
 
 
-
 [AUTHOR]
+
 E-Mail: n-miyo@tempus.org
 Twitter: nmiyo
 Blog: http://blogger.tempus.org/
+
+
+[LICENCE]
+
+This program uses jQuery library.  See jQuery source code
+header for jQuery License.
+
+This program uses JsUnitTest framework.  See JsUnitTest
+License at http://jsunittest.com/.
+
+License for other codes are below:
+
+  Copyright (c) 2010, MIYOKAWA, Nobuyoshi <n-miyo@tempus.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHORS ''AS IS'' AND ANY EXPRESS
+  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 ; EOF

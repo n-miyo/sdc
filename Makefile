@@ -3,27 +3,19 @@
 #
 
 DIST_NAME = sdc
-DIST_TARGET = \
-  background.html \
-  icon0.png \
-  icon1.png \
-  icon2.png \
-  icon3.png \
-  icon4.png \
-  icon48.png \
-  icon128.png \
-  manifest.json
-VERSION=`cat manifest.json | \
+VERSION=`cat dist/manifest.json | \
 	  awk '/version/{ gsub(/[",]/, "", $$2); print $$2}'`
 
 all:
-	@echo "you mean 'make dist'?"
+	@echo "you mean 'make zip'?"
 
-dist:
-	mkdir ${DIST_NAME}
-	cp -a ${DIST_TARGET} ${DIST_NAME}
-	zip -9 "${DIST_NAME}-${VERSION}.zip" ${DIST_NAME}/*
-	rm -rf ${DIST_NAME}
+zip:
+	@if [ -e ${DIST_NAME} ]; then \
+		(echo "already exist ${DIST_NAME} dir"; exit 1); \
+	fi
+	ln -s dist ${DIST_NAME}
+	zip -r9 "${DIST_NAME}-${VERSION}.zip" ${DIST_NAME}/*
+	rm ${DIST_NAME}
 	ls -l ${DIST_NAME}-${VERSION}.zip
 
 clean:

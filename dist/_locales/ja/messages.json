@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "Search Date Changer オプション",
+    "description": "Title for option page."
+  },
+  "optionHeader": {
+    "message": "Search Date Changer オプション",
+    "description": "Simple message for this page."
+  },
+  "tableHeaderRange": {
+    "message": "期間",
+    "description": "Option table header: range"
+  },
+  "tableHeaderEnable": {
+    "message": "有効",
+    "description": "Option table header: Enable"
+  },
+  "tableHeaderDefault": {
+    "message": "優先",
+    "description": "Option table header: Default"
+  },
+  "anyTime": {
+    "message": "期間指定なし",
+    "description": "Google Search Option: anyTime"
+  },
+  "latest": {
+    "message": "最新",
+    "description": "Google Search Option: latest"
+  },
+  "past24Hours": {
+    "message": "24 時間以内",
+    "description": "Google Search Option: past24Hours"
+  },
+  "pastWeek": {
+    "message": "1 週間以内",
+    "description": "Google Search Option: pastWeek"
+  },
+  "pastMonth": {
+    "message": "1 か月以内",
+    "description": "Google Search Option: pastMonth"
+  },
+  "pastYear": {
+    "message": "1 年以内",
+    "description": "Google Search Option: pastYear"
+  },
+  "forceRangeSettingMsg": {
+    "message": "全ての検索でユーザ設定を強制使用する",
+    "description": "Whether force user setting or not."
+  },
+  "save": {
+    "message": "保存",
+    "description": "save"
+  },
+  "reset": {
+    "message": "リセット",
+    "description": "reset"
+  },
+  "saveMessage": {
+    "message": "オプションが保存されました。",
+    "description": "save completed message."
+  }
+}

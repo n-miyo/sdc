@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "Search Date Changer Options",
+    "description": "Title for option page."
+  },
+  "optionHeader": {
+    "message": "Search Date Changer Options",
+    "description": "Simple message for this page."
+  },
+  "tableHeaderRange": {
+    "message": "Range",
+    "description": "Option table header: range"
+  },
+  "tableHeaderEnable": {
+    "message": "Enable",
+    "description": "Option table header: Enable"
+  },
+  "tableHeaderDefault": {
+    "message": "Default",
+    "description": "Option table header: Default"
+  },
+  "anyTime": {
+    "message": "Any time",
+    "description": "Google Search Option: anyTime"
+  },
+  "latest": {
+    "message": "Latest",
+    "description": "Google Search Option: latest"
+  },
+  "past24Hours": {
+    "message": "Past 24 hours",
+    "description": "Google Search Option: past24Hours"
+  },
+  "pastWeek": {
+    "message": "Past week",
+    "description": "Google Search Option: pastWeek"
+  },
+  "pastMonth": {
+    "message": "Past month",
+    "description": "Google Search Option: pastMonth"
+  },
+  "pastYear": {
+    "message": "Past year",
+    "description": "Google Search Option: pastYear"
+  },
+  "forceRangeSettingMsg": {
+    "message": "Force user setting for any search.",
+    "description": "Whether force user setting or not."
+  },
+  "save": {
+    "message": "Save",
+    "description": "save"
+  },
+  "reset": {
+    "message": "Reset",
+    "description": "reset"
+  },
+  "saveMessage": {
+    "message": "Options saved.",
+    "description": "save completed message."
+  }
+}
