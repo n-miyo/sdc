@@ -4,7 +4,7 @@
 
 DIST_NAME = sdc
 VERSION=`cat dist/manifest.json | \
-	  awk '/version/{ gsub(/[",]/, "", $$2); print $$2}'`
+	  awk '/\"version/{ gsub(/[",]/, "", $$2); print $$2}'`
 
 all:
 	@echo "you mean 'make zip'?"

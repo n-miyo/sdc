@@ -1,6 +1,7 @@
 {
   "name": "Search Date Changer",
   "version": "1.5.0",
+  "manifest_version": 2,
 
   "description":
     "This extension enables to add 'Publish date option' to Google search results URL and re-search by just oneclick.",
@@ -16,7 +17,11 @@
       "default_title": "Any time"
   },
 
-  "background_page": "background.html",
+  "background": {
+    "persistent": true,
+    "scripts": ["global.js", "background.js"]
+  },
+
   "options_page": "options.html",
   "permissions": [
     "tabs"
