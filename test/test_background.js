@@ -26,16 +26,16 @@ new Test.Unit.Runner(
   };},
 
   // Latest
-  testGetCurrentSearchModeWithLatest: function() {
+  testGetCurrentSearchModeWithHour: function() {
   with(this) {
-    // colon is ':' and rltm is last part.
+    // colon is ':' and tbs is last part.
     assertEqual(
       1,
-      getCurrentSearchMode("http://www.google.com/webhp?q=foo&tbs=rltm:1"));
-    // colon is '3A' and rltm is first part.
+      getCurrentSearchMode("http://www.google.com/webhp?q=foo&tbs=qdr:h"));
+    // colon is '3A' and tbs is first part.
     assertEqual(
       1,
-      getCurrentSearchMode("http://www.google.com/search?tbs=rltm%3A1&q=foo"));
+      getCurrentSearchMode("http://www.google.com/search?tbs=qdr%3Ah&q=foo"));
   };},
 
   // Past 24 hours
@@ -108,7 +108,7 @@ new Test.Unit.Runner(
   with(this) {
     assertEqual(
       4,
-      getCurrentSearchMode("http://www.google.com/search?q=foo&tbs=qdr:m,rltm:1"));
+      getCurrentSearchMode("http://www.google.com/search?q=foo&tbs=qdr:m,qdr:h"));
   };},
 
   // Support Video
@@ -147,7 +147,7 @@ new Test.Unit.Runner(
   with(this) {
     assertEqual(
       1,
-      getCurrentSearchMode("http://www.google.com/webhp?q=foo&tbs=bks:1,rltm:1"));
+      getCurrentSearchMode("http://www.google.com/webhp?q=foo&tbs=bks:1,qdr:h"));
     // Invalid time range.
     assertEqual(
       0,
@@ -168,7 +168,7 @@ new Test.Unit.Runner(
 
     searchMode = 1;
     assertEqual(
-      "http://www.google.com/search?q=bar&tbs=rltm:1",
+      "http://www.google.com/search?q=bar&tbs=qdr:h",
       updateURL("http://www.google.com/search?q=bar&tbs=qdr:m"));
   };},
 
@@ -183,7 +183,7 @@ new Test.Unit.Runner(
     // search category must move to first element.
     searchMode = 1;
     assertEqual(
-      "http://www.google.com/webhp?q=foo&tbs=nws:1,rltm:1",
+      "http://www.google.com/webhp?q=foo&tbs=nws:1,qdr:h",
       updateURL("http://www.google.com/webhp?q=foo&tbs=qdr:m,nws:1"));
   };},
 
@@ -198,7 +198,7 @@ new Test.Unit.Runner(
     // search category must move to first element.
     searchMode = 1;
     assertEqual(
-      "http://www.google.com/webhp?q=foo&tbs=vid:1,rltm:1",
+      "http://www.google.com/webhp?q=foo&tbs=vid:1,qdr:h",
       updateURL("http://www.google.com/webhp?q=foo&tbs=qdr:m,vid:1"));
   };},
 
@@ -213,7 +213,7 @@ new Test.Unit.Runner(
     // search category must move to first element.
     searchMode = 1;
     assertEqual(
-      "http://www.google.com/webhp?q=foo&tbs=bks:1,rltm:1",
+      "http://www.google.com/webhp?q=foo&tbs=bks:1,qdr:h",
       updateURL("http://www.google.com/webhp?q=foo&tbs=qdr:m,bks:1"));
   };},
 
@@ -229,7 +229,7 @@ new Test.Unit.Runner(
     // search category must move to first element.
     searchMode = 1;
     assertEqual(
-      "http://www.google.com/webhp?q=foo&tbs=bks:1,rltm:1",
+      "http://www.google.com/webhp?q=foo&tbs=bks:1,qdr:h",
       updateURL("http://www.google.com/webhp?q=foo&tbs=bks:1,qdr:m,nws:1"));
   };},
 
@@ -250,7 +250,7 @@ new Test.Unit.Runner(
       isValidSearchCategory("http://www.google.com/search?q=bar&tbs=qdr:m,vid:1"));
     assertEqual(
       true,
-      isValidSearchCategory("http://www.google.com/search?q=bar&tbs=rltm:1,bks:1"));
+      isValidSearchCategory("http://www.google.com/search?q=bar&tbs=qdr:h,bks:1"));
 
     // Correct but not supported.  Should be true.
     assertEqual(
@@ -263,7 +263,7 @@ new Test.Unit.Runner(
     // Wrong category
     assertEqual(
       false,
-      isValidSearchCategory("http://www.google.com/search?q=bar&tbs=rltm:1,foo:1"));
+      isValidSearchCategory("http://www.google.com/search?q=bar&tbs=qdr:h,foo:1"));
   };}
 });
 
