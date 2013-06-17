@@ -40,7 +40,7 @@ function saveOptions() {
   localStorage['firstSearchMode'] = firstSearchMode;
 
   var forceRange =
-    $('#forceRangeSetting').attr('checked');
+    $('#forceRangeSetting').prop('checked');
   console.log("saveOptions: forceRange: " + forceRange);
   localStorage['forceRange'] = forceRange;
 
@@ -63,10 +63,10 @@ function restoreOptions() {
   }
   console.log('Loaded from localstorage: ' + storedSearchMode);
 
-  $('#optionSelections :input').attr('checked', false); // All reset.
+  $('#optionSelections :input').prop('checked', false); // All reset.
   for (var i = 0; i < searchMode.length; i++) {
     s = 'input[type=checkbox][value=' + searchMode[i] + ']';
-    $(s).attr('checked', true);
+    $(s).prop('checked', true);
   }
 
   var storedFirstSearchMode = localStorage['firstSearchMode'];
@@ -75,14 +75,14 @@ function restoreOptions() {
     firstMode = storedFirstSearchMode;
   }
   s = 'input[type=radio][value=' + firstMode + ']';
-  $(s).attr('checked', true);
+  $(s).prop('checked', true);
 
   var storedForceRange = localStorage['forceRange'];
   var forceRange = DEFAULT_FORCE_RANGE;
   if (storedForceRange !== undefined) {
     forceRange = (storedForceRange == 'true') ? true : false;
   }
-  $('#forceRangeSetting').attr('checked', forceRange);
+  $('#forceRangeSetting').prop('checked', forceRange);
 
   this.validateCheckbox();	// for safety
 
@@ -95,12 +95,12 @@ function validateCheckbox() {
   var s = '#optionSelections input[type=checkbox][value=' +
     firstSearchMode.attr('value') + ']';
 
-  if ($(s).attr("checked") === false) {
+  if ($(s).prop("checked") === false) {
     // default radio button is on invalid button, so change position.
-    $(firstSearchMode).attr("checked", false);
+    $(firstSearchMode).prop("checked", false);
     $("#optionSelections input[type=checkbox]:checked").each(function() {
       $('#optionSelections input[type=radio][value=' +
-	$(this).attr('value') + ']').attr('checked', true);
+	      $(this).attr('value') + ']').prop('checked', true);
       return false;
     });
   }
@@ -117,7 +117,7 @@ function validateCheckbox() {
   $('#optionSelections input[type=checkbox]').each(function() {
     var r = '#optionSelections input[type=radio][value=' +
       $(this).attr('value') + ']';
-    $(r).attr('disabled', (!$(this).attr('checked') || disableValue));
+    $(r).attr('disabled', (!$(this).prop('checked') || disableValue));
   });
 
   $("#save").attr("disabled", false);
