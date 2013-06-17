@@ -16,7 +16,7 @@ range.  SDC icon will be just only for Google Web search,
 News search, Video search, and Books search.
 
 Every icon clicking, search range changes in the order 'Any
-time', 'Latest', 'Past 24 hours', 'Past week', 'Past month',
+time', 'Past hour', 'Past 24 hours', 'Past week', 'Past month',
 and 'Past year'.  If you'd like to know what the icon means,
 please put your mouse cursor on the icon and tool-tip shows
 current mode.
@@ -42,6 +42,11 @@ All source code will be available from:
 
 
 [HISTORY]
+
+version 1.6.0(Jun 17, 2013):
+- Update Google Chrome Extensions Manifet to V2.
+- Update jQuery to 2.0.2.
+
 
 version 1.5.0(Aug 13, 2010):
 - Support News, Video, Books search in additon to original
