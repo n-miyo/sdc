@@ -23,9 +23,9 @@
     "message": "Any time",
     "description": "Google Search Option: anyTime"
   },
-  "latest": {
-    "message": "Latest",
-    "description": "Google Search Option: latest"
+  "pastHour": {
+    "message": "Past hour",
+    "description": "Google Search Option: pastHour"
   },
   "past24Hours": {
     "message": "Past 24 hours",

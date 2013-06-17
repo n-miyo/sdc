@@ -36,7 +36,7 @@ var TBS_KNOWNTGTREGEXP =
 
 var timeRange = [
   {mess: 'Any time',      opt: '',       key: 'anytime',   enable: true},
-  {mess: 'Latest',        opt: 'rltm:1', key: 'latest',    enable: true},
+  {mess: 'Pase hour',     opt: 'qdr:h',  key: 'pasthour',  enable: true},
   {mess: 'Past 24 hours', opt: 'qdr:d',  key: 'past24',    enable: true},
   {mess: 'Past week',     opt: 'qdr:w',  key: 'pastweek',  enable: true},
   {mess: 'Past month',    opt: 'qdr:m',  key: 'pastmonth', enable: true},

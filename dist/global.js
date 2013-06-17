@@ -26,7 +26,7 @@
 */
 
 var DEFAULT_SEARCH_MODE = [
-  'anytime', 'latest', 'past24', 'pastweek', 'pastmonth', 'pastyear'
+  'anytime', 'pasthour', 'past24', 'pastweek', 'pastmonth', 'pastyear'
 ];
 var DEFAULT_FIRST_SEARCH_MODE = 'anytime';
 var DEFAULT_FORCE_RANGE = false;

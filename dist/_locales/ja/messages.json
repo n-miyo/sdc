@@ -23,8 +23,8 @@
     "message": "期間指定なし",
     "description": "Google Search Option: anyTime"
   },
-  "latest": {
-    "message": "最新",
+  "pastHour": {
+    "message": "1 時間以内",
     "description": "Google Search Option: latest"
   },
   "past24Hours": {

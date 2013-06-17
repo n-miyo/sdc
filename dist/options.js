@@ -131,7 +131,7 @@ $(function() {
   $("#tableHeaderEnable").text(chrome.i18n.getMessage("tableHeaderEnable"));
   $("#tableHeaderDefault").text(chrome.i18n.getMessage("tableHeaderDefault"));
   $("#anyTime").text(chrome.i18n.getMessage("anyTime"));
-  $("#latest").text(chrome.i18n.getMessage("latest"));
+  $("#pastHour").text(chrome.i18n.getMessage("pastHour"));
   $("#past24Hours").text(chrome.i18n.getMessage("past24Hours"));
   $("#pastWeek").text(chrome.i18n.getMessage("pastWeek"));
   $("#pastMonth").text(chrome.i18n.getMessage("pastMonth"));
