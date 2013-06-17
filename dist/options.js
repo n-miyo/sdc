@@ -124,6 +124,9 @@ function validateCheckbox() {
 };
 
 $(function() {
+  // initialize.
+  restoreOptions();
+
   // Setup messages
   $("#title").text(chrome.i18n.getMessage("title"));
   $("#optionHeader").text(chrome.i18n.getMessage("optionHeader"));
@@ -142,6 +145,10 @@ $(function() {
 
   // add hook.
   $(":input").change(validateCheckbox);
+
+  // event handler
+  $("#save").bind('click', function() {saveOptions();});
+  $("#reset").bind('click', function() {restoreOptions();});
 });
 
 /* EOF */
